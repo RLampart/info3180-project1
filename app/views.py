@@ -23,22 +23,20 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
-@app.route('/properties/<propid>')
+@app.route('/property/<propid>')
 def get_image(propid):
     prop = db.session.execute(db.select(Property).filter_by(id=propid)).scalar()
-    print(prop)
     if prop is not None:
        return send_from_directory(os.path.join(os.getcwd(),app.config['UPLOAD_FOLDER']), prop.image)
     else:
-       return("Image Not Found.")
+       return "Image Not Found."
     
 @app.route('/properties/<propertyid>')
-def get_property(propid):
-    prop = db.session.execute(db.select(Property).filter_by(id=propid)).scalar()
-    if prop is not None:
-       return render_template('property.html', image = send_from_directory(os.path.join(os.getcwd(),app.config['UPLOAD_FOLDER']), prop.image))
-    else:
-       return render_template('property.html', "Image Not Found.")
+def get_property(propertyid):
+        prop = db.session.execute(db.select(Property).filter_by(id=propertyid)).scalar()
+        if prop is not None:
+           return render_template('property.html', property = prop)
+        return render_template('property.html')
 
 
 @app.route('/properties')
