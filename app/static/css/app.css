@@ -2,6 +2,16 @@ body {
     padding-top: 5rem;
 }
 
+div.properties{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+div.single{
+    display:flex;
+    flex-direction: column;
+}
+
 div.property{
     display:flex;
     flex-direction: row;

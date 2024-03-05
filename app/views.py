@@ -41,7 +41,9 @@ def get_property(propertyid):
 
 @app.route('/properties')
 def properties():
-    return render_template('properties.html', images = get_uploaded_images())
+    properties = db.session.execute(db.select(Property)).scalars()
+    #print(properties)
+    return render_template('properties.html', properties = properties)
 
 @app.route('/properties/create', methods=['POST', 'GET'])
 def add_property():
@@ -112,4 +114,5 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
 
