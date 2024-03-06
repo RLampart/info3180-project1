@@ -2,14 +2,57 @@ body {
     padding-top: 5rem;
 }
 
+form{
+    background-color: lightgray;
+    padding: 5px;
+}
+
+
+div.group{
+   display: grid;
+   grid-template-columns: auto auto;
+}
+
+
+button.btn{
+    border-radius: 10%;
+    color: antiquewhite;
+    background-color: rgb(var(--bs-primary-rgb));
+}
+
+.form-field{
+    padding: 10px;
+}
+
 div.properties{
     display: grid;
     grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
+
 }
 
 div.single{
     display:flex;
     flex-direction: column;
+    width: 250px;
+    height: 330px;
+    box-sizing: border-box;
+    border: 4px solid palevioletred;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+div.single a{
+    align-self: center;
+}
+
+button.more{
+    background-color: aqua;
 }
 
 div.property{
@@ -20,7 +63,10 @@ div.property{
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    background-color: aqua;
+    box-sizing: border-box;
+    border: 4px solid palevioletred;
+    border-radius: 5px;
+    background-color: aliceblue;
 }
 
 
@@ -35,6 +81,6 @@ div.description > ul{
 }
 
 div.description > ul > li{
-    display: inline;
+    list-style: none;
  
 }
