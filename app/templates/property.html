@@ -4,10 +4,10 @@
 
 <div class = "property">
    <div class = "propimg">
-    <img src="{{ url_for('get_image', propid =  property.id  ) }} " /> 
+    <img  alt= "Image of Property {{property.id}}" src="{{ url_for('get_image', propid =  property.id  ) }} " /> 
    </div>
 
-  <div class = description>
+  <div class = "description">
     <h2> {{property.title}}</h2>
     <ul class="first">
         <li>
@@ -28,7 +28,7 @@
     </ul>
     Location
     <p>{{property.location}}</p>
-    <button type="submit" class = "buttn">Email Realtor</button>
+    <button type="submit" class = "btn btn-info">Email Realtor</button>
   </div>
    
 </div>

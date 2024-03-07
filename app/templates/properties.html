@@ -5,13 +5,13 @@
 
 <div class = "properties">
       {% for prop in properties %}
-      <div class = "single">
-          <img src="{{ url_for('get_image', propid =  prop.id  ) }} " /> 
+      <div class = "single card">
+          <img alt= "Image of Property {{prop.id}}" src="{{ url_for('get_image', propid =  prop.id  ) }} " /> 
           <h3>{{prop.title}}</h3>
           <p>Location: {{prop.location}}</p>
           <p>Price: ${{prop.price}}</p>
           <a href = "{{url_for('get_property', propertyid = prop.id)}}">
-              <button type="submit" class="more">View Property</button>
+              <button type="submit" class="btn btn-primary">View Property</button>
           </a>
         
       </div>
